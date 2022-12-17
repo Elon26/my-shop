@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "89543fsd34olk04",
+        "name": "kitchen",
+        "label": "Кухонная техника",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/categories%2Fcateg1.jpg?alt=media&token=21bd321e-8cd6-40ef-bda0-0346076b2958"
+    },
+    {
+        "_id": "89543fsd34olk09",
+        "name": "tele-video-audio",
+        "label": "Теле-видео-аудио",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/categories%2Fcateg2.jpg?alt=media&token=e5d22e36-9ca8-4938-bd36-223540d7f193"
+    },
+    {
+        "_id": "89543fsd34olk14",
+        "name": "digital",
+        "label": "Цифровые устройства",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/categories%2Fcateg3.jpg?alt=media&token=31fbf85d-1660-41b4-9587-559bff12d946"
+    },
+    {
+        "_id": "89543fsd34olk19",
+        "name": "computers",
+        "label": "Компьютеры и оргтехника",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/categories%2Fcateg4.jpg?alt=media&token=5af04e85-ef8b-4984-b266-c3ce7375fafa"
+    }
+]

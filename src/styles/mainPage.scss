@@ -1,0 +1,64 @@
+@import "./common.scss";
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category {
+    flex: 0 0 50%;
+    @media (max-width: $md1) {
+        flex: 1 1 100%;
+    }
+    &__body {
+        padding: 10px;
+        display: flex;
+        @media (max-width: $md3) {
+            display: block;
+            text-align: center;
+        }
+    }
+    &__img {
+        margin: 0px 10px 0px 0px;
+        img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            @media (max-width: $md3) {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    }
+    &__label {
+        display: inline-block;
+        font-size: 24px;
+        color: inherit;
+        text-decoration: none;
+        margin: 0px 0px 10px 0px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__subCategoryArea {
+        border-top: 1px solid $gray;
+        padding: 10px 0px;
+    }
+    &__subCategory {
+        display: inline-block;
+        color: inherit;
+        text-decoration: none;
+        color: #788497;
+        padding: 0px 0px 5px 0px;
+        &:hover {
+            text-decoration: underline;
+        }
+        &:not(:last-child):after {
+            content: "\2022";
+            display: inline-block;
+            color: #d5d9e0;
+            margin: 0 5px;
+        }
+    }
+}

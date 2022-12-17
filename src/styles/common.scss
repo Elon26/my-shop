@@ -1,0 +1,298 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+input,
+select {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="text"]::-ms-clear {
+    display: none;
+}
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+$gray: #e5e5e5;
+$grayLight: #eaecee;
+$gold: #f07c00;
+$md1: 1239.98px;
+$md2: 767.98px;
+$md3: 479.98px;
+
+.clickCatcher {
+    min-height: 100vh;
+}
+
+.mainContainer {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.mainHeader {
+    margin: 0px 0px 20px 0px;
+    @media (max-width: $md1) {
+        font-size: 26px;
+    }
+    @media (max-width: $md3) {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.systemMessage {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button {
+    font-size: 14px;
+    text-align: center;
+    background: linear-gradient(to bottom, #f7941e 0%, #f25e2e 100%);
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    box-shadow: 0 1px 2px 0 #8e2d1e;
+    border-radius: 3px;
+    cursor: pointer;
+    &_searchField {
+        border-radius: 0 3px 3px 0;
+        position: relative;
+        top: -1px;
+    }
+    &_disabled {
+        cursor: auto;
+        opacity: 0.6;
+    }
+    &_green {
+        background: linear-gradient(to bottom, #0ab45b 0%, #09934b 100%);
+        box-shadow: 0 1px 2px 0 #2a8d39;
+    }
+    &:focus {
+        border: none;
+    }
+}
+
+.popap {
+    &__body {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.7s ease 0s, visibility 0.7s ease 0s;
+        &_img {
+            background-color: rgb(255, 255, 255);
+        }
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__content {
+        position: relative;
+        padding: 0 10px;
+    }
+    &__img {
+        width: 700px;
+        @media (max-width: $md1) {
+            width: 100%;
+        }
+    }
+    &__contentBody {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 10px 25px rgb(0 0 0 / 50%);
+        border-radius: 4px;
+        padding: 20px;
+    }
+    &__header {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 0px 0px 20px 0px;
+        @media (max-width: $md2) {
+            text-align: center;
+            margin: 20px 0px 20px 0px;
+        }
+    }
+    &__itemRow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 800px;
+        margin: 0px 0px 20px 0px;
+        @media (max-width: $md1) {
+            width: 100%;
+        }
+        @media (max-width: $md2) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &__imgRow img {
+        width: 100px;
+        border: 1px solid $gray;
+        margin: 0px 20px 0px 0px;
+        @media (max-width: $md3) {
+            margin: 0;
+        }
+    }
+    &__label {
+        margin: 0px 20px 0px 0px;
+        @media (max-width: $md3) {
+            margin: 0;
+            text-align: center;
+        }
+    }
+    &__quantity {
+        margin: 0px 20px 0px 0px;
+        @media (max-width: $md3) {
+            margin: 0;
+        }
+    }
+    &__btnsRow {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        @media (max-width: $md2) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &__contButton {
+        color: #969696;
+        text-decoration: underline;
+        cursor: pointer;
+        @media (max-width: $md2) {
+            margin: 10px 0px 0px 0px;
+        }
+    }
+    &__toCartButton {
+        &_big {
+            font-size: 24px;
+        }
+    }
+    &__closeIcon {
+        font-size: 48px;
+        position: absolute;
+        right: 5px;
+        top: 0px;
+        cursor: pointer;
+        transition: color 0.3s ease 0s;
+        &:hover {
+            color: $gold;
+        }
+    }
+}
+
+.reused {
+    &__inStock {
+        & span:first-child {
+            position: relative;
+            top: 9px;
+            display: inline-block;
+            margin: 0px 10px 0px 0px;
+            font-size: 30px;
+            color: rgb(0, 210, 0);
+        }
+        &_not span:first-child {
+            color: rgb(113, 37, 37);
+        }
+        @media (max-width: $md2) {
+            font-size: 14px;
+        }
+    }
+    &__paginationBody {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__paginationItem {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #000000;
+        background-color: $gray;
+        border-radius: 50%;
+        margin: 0px 10px;
+        cursor: pointer;
+        &.active {
+            background-color: $gold;
+        }
+    }
+}
+
+.select {
+    padding: 10px;
+    background-color: $gray;
+    background-color: #fafafa;
+    border: 1px solid #eaecee;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.input {
+    width: calc(100% - 44px);
+    display: inline-block;
+    padding: 10px 20px;
+    box-shadow: inset 0 2px 3px 0 #e4e4e4;
+    border: 2px solid $gray;
+    border-radius: 3px;
+    color: #717171;
+    &:focus {
+        border: 2px solid #a1a1a1;
+    }
+    &_error {
+        border: 2px solid red;
+    }
+    &_password {
+        width: calc(100% - 84px);
+        padding: 10px 60px 10px 20px;
+    }
+}
+
+.inputLabel {
+    display: block;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.inputError {
+    color: red;
+}
+
+.showPasswordButton {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 38px;
+    right: 0px;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-left: 2px solid rgba(161, 161, 161, 0.5);
+    svg {
+        position: relative;
+        top: 2px;
+        color: rgb(147, 147, 147);
+    }
+}

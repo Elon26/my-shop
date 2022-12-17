@@ -1,0 +1,21 @@
+@import "./common.scss";
+
+.bredcrumbs {
+    &__body {
+        max-width: 1200px;
+        margin: 10px auto 0px auto;
+        @media (max-width: $md1) {
+            margin: 10px 10px 0 10px;
+        }
+    }
+    &__item {
+        display: inline-block;
+        margin: 0px 10px;
+        &:first-child {
+            margin: 0px 10px 0px 0px;
+        }
+        @media (max-width: $md3) {
+            font-size: 14px;
+        }
+    }
+}

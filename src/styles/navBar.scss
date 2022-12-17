@@ -1,0 +1,207 @@
+@import "./common.scss";
+
+.topNavBar {
+    background-color: $gold;
+
+    &__body {
+        max-width: 1200px;
+        margin: 0px auto;
+        position: relative;
+        height: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0px 20px 0px;
+        @media (max-width: $md1) {
+            padding: 10px 10px 10px 10px;
+            height: 100%;
+        }
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+        @media (max-width: $md1) {
+            flex: 1 1 25%;
+            justify-content: space-around;
+        }
+        @media (max-width: $md2) {
+            flex: 1 1 100%;
+            justify-content: center;
+        }
+    }
+    &__logo {
+        margin: 0px 15px 0px 0px;
+    }
+    &__center {
+        flex: 1 1 auto;
+        margin: 0 20px;
+        @media (max-width: $md1) {
+            flex: 1 1 100%;
+            margin: 0;
+        }
+    }
+    &__right {
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media (max-width: $md1) {
+            flex: 1 1 auto;
+            justify-content: space-around;
+        }
+    }
+    &__menuObject {
+        text-align: center;
+        position: relative;
+        top: 10px;
+        @media (max-width: $md1) {
+            top: 0;
+        }
+        color: inherit;
+        text-decoration: none;
+        &:first-child {
+            margin: 0px 10px 0px 0px;
+        }
+        width: 60px;
+    }
+    &__loginItem {
+        position: relative;
+        cursor: pointer;
+    }
+    &__menuObjectIcon {
+        margin: 0px 0px -5px 0px;
+        font-size: 36px;
+    }
+    &__dropdownArea {
+        background-color: #fff;
+        position: absolute;
+        z-index: 2;
+        bottom: -61px;
+        left: -15px;
+        width: 100%;
+        padding: 10px;
+        box-shadow: inset 0 2px 3px 0 #e4e4e4;
+        border: 1px solid $gray;
+        border-radius: 3px;
+        text-align: center;
+    }
+    &__dropdownItem {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+        color: #000;
+    }
+    &__menuItem {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    &__basicPhone {
+        color: inherit;
+        margin: 0px 5px 0px 0px;
+        text-decoration: none;
+        border-bottom: 1px dashed #ffffff;
+    }
+    &__phoneShedule {
+        font-weight: normal;
+        @media (max-width: $md2) {
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+.NavBarStores {
+    &__body {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__icon {
+        position: relative;
+        top: 3px;
+        font-size: 30px;
+        color: #ffffff;
+        margin: 0px 5px 0px 0px;
+    }
+    &__text {
+        color: #ffffff;
+        border-bottom: 1px dashed #ffffff;
+    }
+    &__area {
+        position: absolute;
+        z-index: 2;
+        background-color: #fff;
+        left: 0;
+        top: 90px;
+        max-width: 100%;
+        box-shadow: 0px 0px 6px 0px #9f9f9f;
+        padding: 20px;
+        @media (max-width: $md1) {
+            top: 75px;
+            margin: 0 20px;
+        }
+        @media (max-width: $md2) {
+            top: 60px;
+        }
+    }
+    &__quantityStores {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0px 0px 30px 0px;
+    }
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px -10px;
+    }
+    &__store {
+        flex: 0 1 33.33333%;
+        @media (max-width: $md2) {
+            flex: 1 1 100%;
+            &:not(&:last-child) {
+                margin: 0px 0px 20px 0px;
+            }
+        }
+    }
+    &__closeIcon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 30px;
+        color: #808080;
+        cursor: pointer;
+    }
+}
+
+.NavBarStore {
+    &__body {
+        padding: 0 10px;
+        @media (max-width: $md2) {
+            text-align: center;
+        }
+    }
+    &__address {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0px 0px 30px 0px;
+    }
+    &__phone {
+        text-decoration: none;
+        color: #808080;
+        font-weight: bold;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__schedule span {
+        color: #808080;
+    }
+}

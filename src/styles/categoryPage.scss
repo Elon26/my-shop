@@ -1,0 +1,47 @@
+@import "./common.scss";
+
+.categoryRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.subCategoryCard {
+    flex: 0 0 25%;
+    @media (max-width: $md1) {
+        flex: 1 1 50%;
+    }
+    @media (max-width: $md2) {
+        flex: 1 1 100%;
+    }
+
+    &__body {
+        padding: 20px;
+        text-align: center;
+        border: 1px solid $gray;
+        &:not(:last-child) {
+            border-right: none;
+        }
+    }
+
+    &__img {
+        display: block;
+        margin: 0px auto;
+        img {
+            width: 230px;
+            height: 200px;
+            object-fit: contain;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        border-bottom: 1px solid $gold;
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            border-bottom: 1px solid $gray;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+[
+    {
+        "_id": "89543fsd34olk05",
+        "categoryName": "kitchen",
+        "name": "fridges",
+        "label": "Холодильники",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg1.jpg?alt=media&token=cff3b702-75ca-4427-9185-956962edbcd6"
+    },
+    {
+        "_id": "89543fsd34olk06",
+        "categoryName": "kitchen",
+        "name": "dishwashers",
+        "label": "Посудомоечные машины",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg3.jpg?alt=media&token=285bc9c9-752b-4909-b086-1319aa9e3a22"
+    },
+    {
+        "_id": "89543fsd34olk07",
+        "categoryName": "kitchen",
+        "name": "coffeeMakers",
+        "label": "Кофеварки",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg2.jpg?alt=media&token=5c753dd1-5384-45c5-a9f0-dfbb782636fc"
+    },
+    {
+        "_id": "89543fsd34olk08",
+        "categoryName": "kitchen",
+        "name": "microwaves",
+        "label": "Микроволновые печи",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg4.jpg?alt=media&token=d9d0fd75-6897-4c12-b885-cfddcdd4ace1"
+    },
+    {
+        "_id": "89543fsd34olk10",
+        "categoryName": "tele-video-audio",
+        "name": "TVs",
+        "label": "Телевизоры",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg16.jpg?alt=media&token=18624c79-3ceb-4658-a9b9-d60faf448cc3"
+    },
+    {
+        "_id": "89543fsd34olk11",
+        "categoryName": "tele-video-audio",
+        "name": "soundbars",
+        "label": "Саундбары",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg13.jpg?alt=media&token=065c4b9f-305e-4f13-ba1a-6efcaa82dc14"
+    },
+    {
+        "_id": "89543fsd34olk12",
+        "categoryName": "tele-video-audio",
+        "name": "musicSystems",
+        "label": "Музыкальные центры",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg14.jpg?alt=media&token=792a09c6-7628-44cf-b2c0-83828db4136a"
+    },
+    {
+        "_id": "89543fsd34olk13",
+        "categoryName": "tele-video-audio",
+        "name": "synthesizers",
+        "label": "Синтезаторы",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg15.jpg?alt=media&token=29df0a7c-5742-42ac-b815-8e1760e7812d"
+    },
+    {
+        "_id": "89543fsd34olk15",
+        "categoryName": "digital",
+        "name": "smartphones",
+        "label": "Смартфоны",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg5.jpg?alt=media&token=ee3e05ce-b591-47a5-aaaa-d4e12153c6e3"
+    },
+    {
+        "_id": "89543fsd34olk16",
+        "categoryName": "digital",
+        "name": "mobilePhones",
+        "label": "Мобильные телефоны",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg6.jpg?alt=media&token=d6ad6388-9483-415b-86ec-9678c9bc27d0"
+    },
+    {
+        "_id": "89543fsd34olk17",
+        "categoryName": "digital",
+        "name": "externalBatteries",
+        "label": "Внешние аккумуляторы",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg7.jpg?alt=media&token=b3531e8d-6965-4133-b125-190051f5155b"
+    },
+    {
+        "_id": "89543fsd34olk18",
+        "categoryName": "digital",
+        "name": "chargers",
+        "label": "Зарядные устройства",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg8.jpg?alt=media&token=b32ca01c-4f31-45dc-8145-c88daaea1f08"
+    },
+    {
+        "_id": "89543fsd34olk20",
+        "categoryName": "computers",
+        "name": "laptops",
+        "label": "Ноутбуки",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg9.jpg?alt=media&token=aaf91331-3dfe-40ca-96a3-92a65cce4333"
+    },
+    {
+        "_id": "89543fsd34olk21",
+        "categoryName": "computers",
+        "name": "systemBlocks",
+        "label": "Системные блоки",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg10.jpg?alt=media&token=b1bd4b67-6402-4533-af21-1cc8c3f5ebcb"
+    },
+    {
+        "_id": "89543fsd34olk22",
+        "categoryName": "computers",
+        "name": "monitors",
+        "label": "Мониторы",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg11.jpg?alt=media&token=bc5920c1-400d-4c6c-a20d-20857a74e628"
+    },
+    {
+        "_id": "89543fsd34olk23",
+        "categoryName": "computers",
+        "name": "pcSpeakers",
+        "label": "Компьютерные колонки",
+        "img": "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/subcategories%2Fsubcateg12.jpg?alt=media&token=10d74ffc-8cb5-40e6-9ee3-6956d4ff305b"
+    }
+]
