@@ -17,6 +17,7 @@ const createTodayTomorrowMessage = (time: number) => {
         "августа",
         "сентября",
         "октября",
+        "ноября",
         "декабря"
     ];
 
