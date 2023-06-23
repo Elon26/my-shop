@@ -35,7 +35,7 @@ const MainPage = () => {
             </div>
             {isShow && (
                 <>
-                    <h3>Загрузка данных в Firebase</h3>
+                    <h3>Загрузка дефолтной базы данных</h3>
                     <ul>
                         <li>Status: {status}</li>
                         <li>Progress: {progress}%</li>
