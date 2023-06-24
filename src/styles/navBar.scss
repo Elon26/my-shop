@@ -64,7 +64,7 @@
         &:first-child {
             margin: 0px 10px 0px 0px;
         }
-        width: 60px;
+        min-width: 60px;
     }
     &__loginItem {
         position: relative;

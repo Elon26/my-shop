@@ -75,7 +75,7 @@ const NavBar = () => {
                                 Корзина
                             </div>
                         </Link>
-                        {!isLoggedIn && (
+                        {(!isLoggedIn || (isLoggedIn && !currentUser)) && (
                             <Link
                                 to="/my-shop/login/"
                                 className="topNavBar__menuObject"

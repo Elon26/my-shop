@@ -16,9 +16,9 @@ import ClickCatcherProvider from "./hooks/useClickCatcher";
 import RegisterPage from "./layouts/registerPage";
 import AdminPanelPage from "./layouts/adminPanelPage";
 import NavBar from "./components/ui/navBar";
-import Bredcrumbs from "./components/ui/bredcrumbs";
 import WindowDimensionsProvider from "./hooks/useWindowDimensions";
 import AppLoader from "./store/appLoader";
+import Breadcrumbs from "./components/ui/breadcrumbs";
 
 function App() {
     axios.defaults.baseURL = SERVER_URL;
@@ -29,7 +29,7 @@ function App() {
                 <WindowDimensionsProvider>
                     <ClickCatcherProvider>
                         <NavBar />
-                        <Bredcrumbs />
+                        <Breadcrumbs />
                         <div className="mainContainer">
                             <Switch>
                                 <Redirect

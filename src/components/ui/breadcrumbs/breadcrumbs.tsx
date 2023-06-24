@@ -5,10 +5,10 @@ import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
 import { getCategory } from "../../../store/categories";
 import { getProduct } from "../../../store/products";
 import { getSubCategory } from "../../../store/subCategories";
-import "../../../styles/bredcrumbs.scss";
+import "../../../styles/breadcrumbs.scss";
 import limitedText from "../../../utils/limitedText";
 
-const Bredcrumbs = () => {
+const Breadcrumbs = () => {
     const location = useLocation();
     const rotesWithTrash = location.pathname.split("/");
     const rotes = rotesWithTrash.filter((route) => route !== "");
@@ -22,17 +22,17 @@ const Bredcrumbs = () => {
     if (location.pathname.includes("/my-shop/admin/")) return null;
 
     return (
-        <div className="bredcrumbs">
-            <div className="bredcrumbs__body">
+        <div className="breadcrumbs">
+            <div className="breadcrumbs__body">
                 {rotes.length > 1 && (
-                    <Link to="/my-shop/" className="bredcrumbs__item">
+                    <Link to="/my-shop/" className="breadcrumbs__item">
                         Главная
                     </Link>
                 )}
                 {category && !subCategory && (
                     <>
                         <span>{`>`}</span>
-                        <span className="bredcrumbs__item">
+                        <span className="breadcrumbs__item">
                             {category.label}
                         </span>
                     </>
@@ -42,12 +42,12 @@ const Bredcrumbs = () => {
                         <span>{`>`}</span>
                         <Link
                             to={"/my-shop/categories/" + category.name}
-                            className="bredcrumbs__item"
+                            className="breadcrumbs__item"
                         >
                             {category.label}
                         </Link>
                         <span>{`>`}</span>
-                        <span className="bredcrumbs__item">
+                        <span className="breadcrumbs__item">
                             {subCategory.label}
                         </span>
                     </>
@@ -57,7 +57,7 @@ const Bredcrumbs = () => {
                         <span>{`>`}</span>
                         <Link
                             to={"/my-shop/categories/" + category.name}
-                            className="bredcrumbs__item"
+                            className="breadcrumbs__item"
                         >
                             {category.label}
                         </Link>
@@ -69,13 +69,13 @@ const Bredcrumbs = () => {
                                 "/" +
                                 subCategory.name
                             }
-                            className="bredcrumbs__item"
+                            className="breadcrumbs__item"
                         >
                             {subCategory.label}
                         </Link>
                         <span>{`>`}</span>
                         {
-                            <span className="bredcrumbs__item">
+                            <span className="breadcrumbs__item">
                                 {limitedText(
                                     product.label,
                                     windowWidth && windowWidth >= 480
@@ -91,19 +91,19 @@ const Bredcrumbs = () => {
                 {rotes[1] === "cart" && (
                     <>
                         <span>{`>`}</span>
-                        <span className="bredcrumbs__item">Корзина</span>
+                        <span className="breadcrumbs__item">Корзина</span>
                     </>
                 )}
                 {rotes[1] === "login" && (
                     <>
                         <span>{`>`}</span>
-                        <span className="bredcrumbs__item">Авторизация</span>
+                        <span className="breadcrumbs__item">Авторизация</span>
                     </>
                 )}
                 {rotes[1] === "register" && (
                     <>
                         <span>{`>`}</span>
-                        <span className="bredcrumbs__item">Регистрация</span>
+                        <span className="breadcrumbs__item">Регистрация</span>
                     </>
                 )}
             </div>
@@ -111,4 +111,4 @@ const Bredcrumbs = () => {
     );
 };
 
-export default Bredcrumbs;
+export default Breadcrumbs;
