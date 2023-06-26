@@ -6,19 +6,21 @@ import { getAllSubCategories } from "../../store/subCategories";
 import "../../styles/mainPage.scss";
 import useMockData from "../../utils/mockData";
 import { wrapAsyncFunction } from "../../utils/wrapAsyncFunction";
+import MainSlider from "../../components/ui/mainSlider/MainSlider";
 
 const MainPage = () => {
-    const subCategories = useAppSelector(getAllSubCategories());
-    const categories = useAppSelector(getAllCategories());
-
     const isShow = false;
     const { initialize, progress, status } = useMockData();
     const handleClick = async () => {
         await initialize();
     };
 
+    const subCategories = useAppSelector(getAllSubCategories());
+    const categories = useAppSelector(getAllCategories());
+
     return (
         <>
+            <MainSlider />
             <div className="categories">
                 {categories.map((category) => (
                     <CategoriesForMainPage
