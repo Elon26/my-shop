@@ -1,0 +1,22 @@
+@import "./common.scss";
+
+.stores {
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__row {
+        border: 1px solid #000000;
+        align-items: stretch;
+        margin: 0;
+    }
+
+    &__item {
+        cursor: pointer;
+        border: 1px solid #000000;
+        flex: 1 1 calc(33.3333% - 2px);
+        &.selected {
+            background-color: #e1e1e1;
+        }
+    }
+}

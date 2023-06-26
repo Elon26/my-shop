@@ -17,6 +17,9 @@
             object-fit: contain;
             padding: 0px 20px;
             cursor: pointer;
+            @media (max-width: $md3) {
+                padding: 0;
+            }
         }
         @media (max-width: $md1) {
             flex: 0 0 40%;

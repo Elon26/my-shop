@@ -5,7 +5,7 @@ import InStock from "../../common/inStock";
 import "../../../styles/productPage.scss";
 import createTodayTomorrowMessage from "../../../utils/createTodayTomorrowMessage";
 import { useHistory } from "react-router-dom";
-import Popap from "../../common/popap";
+import Popup from "../../common/popup";
 import {
     getDataFromLocalStorage,
     updateCartInLocalStorage
@@ -18,8 +18,8 @@ interface ProductPageProps {
 }
 
 const ProductPage = ({ productName }: ProductPageProps) => {
-    const [isImgPopapOpen, setIsImgPopapOpen] = useState(false);
-    const [isTextPopapOpen, setIsTextPopapOpen] = useState(false);
+    const [isImgPopupOpen, setIsImgPopupOpen] = useState(false);
+    const [isTextPopupOpen, setIsTextPopupOpen] = useState(false);
 
     const product = useAppSelector(getProduct(productName));
     const isLoading = useAppSelector(getProductsLoadingStatus());
@@ -47,7 +47,7 @@ const ProductPage = ({ productName }: ProductPageProps) => {
                 }
             };
             updateCartInLocalStorage("diplomUserCart", data);
-            setIsTextPopapOpen(true);
+            setIsTextPopupOpen(true);
         }
     };
 
@@ -61,7 +61,7 @@ const ProductPage = ({ productName }: ProductPageProps) => {
                             <img
                                 src={product.img}
                                 alt={product.label}
-                                onClick={() => setIsImgPopapOpen(true)}
+                                onClick={() => setIsImgPopupOpen(true)}
                             />
                         </div>
                         <div className="productPage__infoColumn">
@@ -125,17 +125,17 @@ const ProductPage = ({ productName }: ProductPageProps) => {
                             </div>
                         </div>
                     </div>
-                    <Popap
+                    <Popup
                         type="img"
-                        isPopapOpen={isImgPopapOpen}
+                        isPopupOpen={isImgPopupOpen}
                         imgForFullScreen={product.img}
                         label={product.label}
-                        handleClose={() => setIsImgPopapOpen(false)}
+                        handleClose={() => setIsImgPopupOpen(false)}
                     />
-                    <Popap
+                    <Popup
                         type="text"
-                        isPopapOpen={isTextPopapOpen}
-                        handleClose={() => setIsTextPopapOpen(false)}
+                        isPopupOpen={isTextPopupOpen}
+                        handleClose={() => setIsTextPopupOpen(false)}
                         productId={product._id}
                     />
                 </>

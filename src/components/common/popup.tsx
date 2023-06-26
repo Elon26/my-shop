@@ -8,7 +8,7 @@ import limitedText from "../../utils/limitedText";
 
 interface PaginationProps {
     type: string;
-    isPopapOpen: boolean;
+    isPopupOpen: boolean;
     imgForFullScreen?: string;
     label?: string;
     handleClose(): void;
@@ -18,9 +18,9 @@ interface PaginationProps {
     handleFinishTheDeal?(): void;
 }
 
-const Popap = ({
+const Popup = ({
     type,
-    isPopapOpen,
+    isPopupOpen,
     imgForFullScreen,
     label,
     handleClose,
@@ -29,15 +29,15 @@ const Popap = ({
     textForButton,
     handleFinishTheDeal
 }: PaginationProps) => {
-    const popapClassToggle = (type: string) => {
+    const popupClassToggle = (type: string) => {
         if (type === "img") {
             return (
-                "popap__body" +
-                " popap__body_img" +
-                (isPopapOpen ? " active" : "")
+                "popup__body" +
+                " popup__body_img" +
+                (isPopupOpen ? " active" : "")
             );
         } else {
-            return "popap__body" + (isPopapOpen ? " active" : "");
+            return "popup__body" + (isPopupOpen ? " active" : "");
         }
     };
 
@@ -51,56 +51,56 @@ const Popap = ({
     const handleClickToEmptySpace = (e: React.MouseEvent<HTMLElement>) => {
         if (
             e.target instanceof HTMLElement &&
-            !e.target.closest(".popap__content")
+            !e.target.closest(".popup__content")
         ) {
             handleClose();
         }
     };
 
     return (
-        <div className="popap">
+        <div className="popup">
             <div
-                className={popapClassToggle(type)}
+                className={popupClassToggle(type)}
                 onClick={handleClickToEmptySpace}
             >
-                <div className="popap__content">
+                <div className="popup__content">
                     {type === "img" && (
                         <img
-                            className="popap__img"
+                            className="popup__img"
                             src={imgForFullScreen}
                             alt={label}
                         />
                     )}
                     {product && type === "text" && (
-                        <div className="popap__contentBody">
-                            <div className="popap__header">
+                        <div className="popup__contentBody">
+                            <div className="popup__header">
                                 Вы добавили в корзину
                             </div>
-                            <div className="popap__itemRow">
-                                <div className="popap__imgRow">
+                            <div className="popup__itemRow">
+                                <div className="popup__imgRow">
                                     <img
                                         src={product.img}
                                         alt={product.label}
                                     />
                                 </div>
-                                <div className="popap__label">
+                                <div className="popup__label">
                                     {limitedText(product.label, 40)}
                                 </div>
-                                <div className="popap__quantity">1 шт.</div>
-                                <div className="popap__price">
+                                <div className="popup__quantity">1 шт.</div>
+                                <div className="popup__price">
                                     <b>{betweenNumberSpacer(product.price)}</b>{" "}
                                     руб.
                                 </div>
                             </div>
-                            <div className="popap__btnsRow">
+                            <div className="popup__btnsRow">
                                 <button
-                                    className="popap__toCartButton button"
+                                    className="popup__toCartButton button"
                                     onClick={handleRedirect}
                                 >
                                     Оформить заказ
                                 </button>
                                 <div
-                                    className="popap__contButton"
+                                    className="popup__contButton"
                                     onClick={handleClose}
                                 >
                                     Продолжить выбирать товары
@@ -109,15 +109,15 @@ const Popap = ({
                         </div>
                     )}
                     {type === "simpleText" && (
-                        <div className="popap__contentBody">
+                        <div className="popup__contentBody">
                             <br />
                             <br />
-                            <div className="popap__header">
+                            <div className="popup__header">
                                 {textForMessage}
                             </div>
-                            <div className="popap__btnsRow">
+                            <div className="popup__btnsRow">
                                 <button
-                                    className="popap__toCartButton popap__toCartButton_big button button_green"
+                                    className="popup__toCartButton popup__toCartButton_big button button_green"
                                     onClick={handleFinishTheDeal}
                                 >
                                     {textForButton}
@@ -125,7 +125,7 @@ const Popap = ({
                             </div>
                         </div>
                     )}
-                    <div className="popap__closeIcon" onClick={handleClose}>
+                    <div className="popup__closeIcon" onClick={handleClose}>
                         <BiX />
                     </div>
                 </div>
@@ -134,4 +134,4 @@ const Popap = ({
     );
 };
 
-export default Popap;
+export default Popup;

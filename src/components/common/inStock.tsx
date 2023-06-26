@@ -21,7 +21,7 @@ const InStock = ({ quantity }: InStockProps) => {
                     <span>
                         <AiFillCloseCircle />
                     </span>
-                    <span>Товар доступен под заказ</span>
+                    <span>Ожидаем поставку</span>
                 </div>
             )}
         </>

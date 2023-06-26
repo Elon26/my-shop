@@ -106,6 +106,42 @@ const Breadcrumbs = () => {
                         <span className="breadcrumbs__item">Регистрация</span>
                     </>
                 )}
+                {rotes[1] === "about" && (
+                    <>
+                        <span>{`>`}</span>
+                        <span className="breadcrumbs__item">О компании</span>
+                    </>
+                )}
+                {rotes[1] === "policy" && (
+                    <>
+                        <span>{`>`}</span>
+                        <span className="breadcrumbs__item">Политика</span>
+                    </>
+                )}
+                {rotes[1] === "stores" && (
+                    <>
+                        <span>{`>`}</span>
+                        <span className="breadcrumbs__item">Магазины</span>
+                    </>
+                )}
+                {rotes[1] === "delivery" && (
+                    <>
+                        <span>{`>`}</span>
+                        <span className="breadcrumbs__item">Доставка</span>
+                    </>
+                )}
+                {rotes[1] === "payment" && (
+                    <>
+                        <span>{`>`}</span>
+                        <span className="breadcrumbs__item">Способы оплаты</span>
+                    </>
+                )}
+                {rotes[1] === "refund" && (
+                    <>
+                        <span>{`>`}</span>
+                        <span className="breadcrumbs__item">Возврат</span>
+                    </>
+                )}
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ import {
 import paginate from "../../../utils/paginate";
 import InputFilterField from "../../common/form/inputFilterField";
 import { useHistory } from "react-router-dom";
-import Popap from "../../common/popap";
+import Popup from "../../common/popup";
 import { useAppSelector } from "../../../hooks/reduxHook";
 import {
     getSubCategoriesLoadingStatus,
@@ -196,11 +196,11 @@ const SubCategoryPage = ({ subCategoryName }: SubCategoryPageProps) => {
                 updateCartInLocalStorage("diplomUserCart", data);
             }
             setAddToCartId(productId);
-            setIsPopapOpen(true);
+            setIsPopupOpen(true);
         }
     };
 
-    const [isPopapOpen, setIsPopapOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     return (
         <>
@@ -317,10 +317,10 @@ const SubCategoryPage = ({ subCategoryName }: SubCategoryPageProps) => {
                     </div>
                 </>
             )}
-            <Popap
+            <Popup
                 type="text"
-                isPopapOpen={isPopapOpen}
-                handleClose={() => setIsPopapOpen(false)}
+                isPopupOpen={isPopupOpen}
+                handleClose={() => setIsPopupOpen(false)}
                 productId={addToCartId}
             />
         </>

@@ -1,0 +1,25 @@
+@import "./common.scss";
+
+.policy {
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__section {
+        margin-bottom: 20px;
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+    }
+}

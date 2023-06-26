@@ -29,14 +29,26 @@ $md1: 1239.98px;
 $md2: 767.98px;
 $md3: 479.98px;
 
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .clickCatcher {
     min-height: 100vh;
 }
 
 .mainContainer {
-    max-width: 1200px;
+    flex: 1 1 auto;
+    width: 1200px;
     margin: 10px auto;
     padding: 10px;
+
+    @media (max-width: $md1) {
+        max-width: 1200px;
+        width: calc(100% - 20px);
+    }
 }
 
 .mainHeader {
@@ -84,7 +96,7 @@ $md3: 479.98px;
     }
 }
 
-.popap {
+.popup {
     &__body {
         position: fixed;
         top: 0;
@@ -242,12 +254,17 @@ $md3: 479.98px;
 }
 
 .select {
-    padding: 10px;
+    padding: 10px 20px 10px 10px;
     background-color: $gray;
     background-color: #fafafa;
     border: 1px solid #eaecee;
     border-radius: 3px;
     cursor: pointer;
+
+    appearance: none;
+    background: url("https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/arrow.svg?alt=media&token=ba6de9f6-86de-4c8c-8061-d797ac52222d")
+        no-repeat right #fafafa;
+    background-position-x: calc(100% - 8px);
 }
 
 .input {

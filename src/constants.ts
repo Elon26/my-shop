@@ -4,7 +4,7 @@ export const SERVER_URL =
 export const REACT_APP_FIREBASE_KEY = "AIzaSyCT7h03pM8lP8m0iI0mgf7f1pZIRxsL_c4";
 export const LOGO_URL = "https://firebasestorage.googleapis.com/v0/b/diplom-project-es2612.appspot.com/o/logo.png?alt=media&token=e6f47e4a-0ebd-4643-aa4d-a02afa6272f7";
 export const BASIC_PHONE = {
-    phone: 88001234567,
+    phone: 88006008080,
     shedule: "круглосуточно"
 };
 export const isFirebase = true;

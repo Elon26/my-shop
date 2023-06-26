@@ -42,7 +42,7 @@ const NavBar = () => {
     }, [currentUserAreaIsInFocus]);
 
     return (
-        <div>
+        <header>
             {currentUser && currentUser.id === "vmxyQSIfXBgDWOy6P8sx0ZmCsZI2" && !location.pathname.includes("/my-shop/admin/") && (
                 <div className="adminPanel">
                     <Link to="/my-shop/admin/">
@@ -136,7 +136,7 @@ const NavBar = () => {
                     )}
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 

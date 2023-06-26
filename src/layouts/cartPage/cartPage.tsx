@@ -9,7 +9,7 @@ import "../../styles/cartPage.scss";
 import CartProduct from "../../components/common/cartProduct";
 import { toast } from "react-toastify";
 import betweenNumberSpacer from "../../utils/betweenNumberSpacer";
-import Popap from "../../components/common/popap";
+import Popup from "../../components/common/popup";
 import { useHistory } from "react-router-dom";
 import createTodayTomorrowMessage from "../../utils/createTodayTomorrowMessage";
 import { ICartInLocalStorageItem } from "../../models";
@@ -144,7 +144,7 @@ const CartPage = () => {
         return acc + product.price * product.quantityToBuy;
     }, 0);
 
-    const [isPopapOpen, setIsPopapOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     const history = useHistory();
 
     const handleFinishTheDeal = async () => {
@@ -153,7 +153,7 @@ const CartPage = () => {
                 14
             )}`
         );
-        setIsPopapOpen(false);
+        setIsPopupOpen(false);
         setIsLoading(true);
         await updateDatabase(userCart);
         clearCartFromLocalStorage("diplomUserCart");
@@ -221,18 +221,18 @@ const CartPage = () => {
                     </div>
                     <div
                         className="cart__button button button_green"
-                        onClick={() => setIsPopapOpen(true)}
+                        onClick={() => setIsPopupOpen(true)}
                     >
                         Оформить заказ
                     </div>
                 </>
             )}
-            <Popap
+            <Popup
                 type="simpleText"
                 textForMessage="Заказ оформлен, пожалуйста, подтвердите оплату."
                 textForButton="Подтверждаю"
-                isPopapOpen={isPopapOpen}
-                handleClose={() => setIsPopapOpen(false)}
+                isPopupOpen={isPopupOpen}
+                handleClose={() => setIsPopupOpen(false)}
                 handleFinishTheDeal={wrapAsyncFunction(handleFinishTheDeal)}
             />
         </div>
