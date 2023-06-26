@@ -3,6 +3,10 @@
 .payment {
     &__title {
         margin-bottom: 20px;
+
+        @media (max-width: $md3) {
+            font-size: 20px;
+        }
     }
 
     &__section {
@@ -10,11 +14,20 @@
 
         h2 {
             margin-bottom: 10px;
+
+            @media (max-width: $md3) {
+                font-size: 18px;
+            }
         }
 
         p {
             margin-bottom: 10px;
             text-align: justify;
+
+            @media (max-width: $md3) {
+                font-size: 14px;
+                line-height: 1rem;
+            }
         }
     }
 }
