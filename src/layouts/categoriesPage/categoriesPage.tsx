@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import CategoryPage from "../../components/page/categoryPage";
 import ProductPage from "../../components/page/productPage";
 import SubCategoryPage from "../../components/page/subCategoryPage";
+import PopularSlider from "../../components/ui/popularSlider/PopularSlider";
 
 const СategoriesPage = () => {
     const { category, subCategory, product } = useParams<{
@@ -22,6 +23,7 @@ const СategoriesPage = () => {
             ) : (
                 <CategoryPage categoryName={category} />
             )}
+            <PopularSlider />
         </>
     );
 };

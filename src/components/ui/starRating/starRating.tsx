@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { wrapAsyncFunction } from "../../../utils/wrapAsyncFunction";
 import { useAppDispatch } from "../../../hooks/reduxHook";
-import { setNewRate } from "../../../store/products";
+import { setProduct } from "../../../store/products";
 import { IProduct } from "../../../models";
 
 interface StarRatingProps {
@@ -40,7 +40,7 @@ const StarRating = ({ product }: StarRatingProps) => {
         };
 
         toast.info("Ваш голос принят");
-        dispatch(setNewRate(data));
+        dispatch(setProduct(data));
         await axios.patch("products/" + product._id + ".json", data);
         localStorage.setItem(`rate-of-${product._id}`, rate.toString());
     }

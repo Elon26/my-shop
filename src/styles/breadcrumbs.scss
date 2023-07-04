@@ -10,6 +10,7 @@
     }
     &__item {
         display: inline-block;
+        color: inherit;
         margin: 0px 10px;
         &:first-child {
             margin: 0px 10px 0px 0px;

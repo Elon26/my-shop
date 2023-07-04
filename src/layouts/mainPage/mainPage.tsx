@@ -7,6 +7,7 @@ import "../../styles/mainPage.scss";
 import useMockData from "../../utils/mockData";
 import { wrapAsyncFunction } from "../../utils/wrapAsyncFunction";
 import MainSlider from "../../components/ui/mainSlider/MainSlider";
+import PopularSlider from "../../components/ui/popularSlider/PopularSlider";
 
 const MainPage = () => {
     const isShow = false;
@@ -35,6 +36,7 @@ const MainPage = () => {
                     />
                 ))}
             </div>
+            <PopularSlider />
             {isShow && (
                 <>
                     <h3>Загрузка дефолтной базы данных</h3>

@@ -19,6 +19,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import axios from "axios";
 import Loader from "../../components/ui/loader";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import PopularSlider from "../../components/ui/popularSlider/PopularSlider";
 
 const CartPage = () => {
     const dispatch = useAppDispatch();
@@ -235,6 +236,7 @@ const CartPage = () => {
                 handleClose={() => setIsPopupOpen(false)}
                 handleFinishTheDeal={wrapAsyncFunction(handleFinishTheDeal)}
             />
+            <PopularSlider />
         </div>
     );
 };

@@ -71,6 +71,15 @@ export const getProducts = (subCategoryName: string) => (state: RootState) =>
         (product) => product.subCategoryName === subCategoryName
     );
 
+export const getPopularProducts = () => (state: RootState) => [...state.products.entities]
+    .filter((product) => product.quantity > 0)
+    .sort((a, b) => {
+        if (a.rate < b.rate) return 1;
+        if (a.rate > b.rate) return -1;
+        return 0;
+    })
+    .slice(0, 10);
+
 export const getProduct = (name: string) => (state: RootState) =>
     state.products.entities.find((product) => product.name === name);
 
@@ -83,7 +92,7 @@ export const getProductsById = (ids: string[]) => (state: RootState) =>
 export const getProductsLoadingStatus = () => (state: RootState) =>
     state.categories.isLoading;
 
-export const setNewRate =
+export const setProduct =
     (payload: IProduct) =>
         (dispatch: AppDispatch): void => {
             dispatch(productsChanged(payload));
