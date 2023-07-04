@@ -27,6 +27,20 @@ const productsSlice = createSlice({
             state.entities = action.payload;
             state.isLoading = false;
         },
+        productsChanged: (
+            state: IProductsState,
+            action: PayloadAction<IProduct>
+        ): void => {
+            const currentState = state.entities;
+
+            const changedObj = action.payload;
+
+            const changedState = currentState.map((item) => {
+                if (item._id === changedObj._id) return changedObj;
+                return item;
+            });
+            state.entities = changedState;
+        },
         productsRequestFailed: (state, action: PayloadAction<string>) => {
             state.error = action.payload;
             state.isLoading = false;
@@ -35,7 +49,7 @@ const productsSlice = createSlice({
 });
 
 const { reducer: productsReducer, actions } = productsSlice;
-const { productsRequested, productsReceived, productsRequestFailed } = actions;
+const { productsRequested, productsReceived, productsChanged, productsRequestFailed } = actions;
 
 export const loadProductsList = () => async (dispatch: AppDispatch) => {
     dispatch(productsRequested());
@@ -51,17 +65,28 @@ export const loadProductsList = () => async (dispatch: AppDispatch) => {
 
 export const getAllProducts = () => (state: RootState) =>
     state.products.entities;
+
 export const getProducts = (subCategoryName: string) => (state: RootState) =>
     state.products.entities.filter(
         (product) => product.subCategoryName === subCategoryName
     );
+
 export const getProduct = (name: string) => (state: RootState) =>
     state.products.entities.find((product) => product.name === name);
+
 export const getProductById = (id: string) => (state: RootState) =>
     state.products.entities.find((product) => product._id === id);
+
 export const getProductsById = (ids: string[]) => (state: RootState) =>
     state.products.entities.filter((product) => ids.includes(product._id));
+
 export const getProductsLoadingStatus = () => (state: RootState) =>
     state.categories.isLoading;
+
+export const setNewRate =
+    (payload: IProduct) =>
+        (dispatch: AppDispatch): void => {
+            dispatch(productsChanged(payload));
+        };
 
 export default productsReducer;

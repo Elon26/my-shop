@@ -313,3 +313,16 @@ $md3: 479.98px;
         color: rgb(147, 147, 147);
     }
 }
+
+.starRating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 10px;
+
+    svg {
+        display: flex;
+        align-items: center;
+    }
+}

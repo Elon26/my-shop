@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import betweenNumberSpacer from "../../../utils/betweenNumberSpacer";
-import { generateEndingForSingular } from "../../../utils/generateEnding";
 import InStock from "../../common/inStock";
 import "../../../styles/productPage.scss";
 import createTodayTomorrowMessage from "../../../utils/createTodayTomorrowMessage";
@@ -12,6 +11,7 @@ import {
 } from "../../../services/localStorageService";
 import { getProduct, getProductsLoadingStatus } from "../../../store/products";
 import { useAppSelector } from "../../../hooks/reduxHook";
+import StarRating from "../../ui/starRating/starRating";
 
 interface ProductPageProps {
     productName: string;
@@ -65,15 +65,9 @@ const ProductPage = ({ productName }: ProductPageProps) => {
                             />
                         </div>
                         <div className="productPage__infoColumn">
-                            <div className="productPage__ratingBlock">
-                                <span className="productPage__rating">
-                                    Рейтинг: {product.rate}{" "}
-                                </span>
-                                <span className="productPage__votes">
-                                    {betweenNumberSpacer(product.votes)} голос
-                                    {generateEndingForSingular(product.votes)}
-                                </span>
-                            </div>
+                            <StarRating
+                                product={product}
+                            />
                             <div className="productPage__card">
                                 <div className="productPage__priceBlock">
                                     <span className="productPage__price">

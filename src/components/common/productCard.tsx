@@ -5,6 +5,8 @@ import { getDataFromLocalStorage } from "../../services/localStorageService";
 import betweenNumberSpacer from "../../utils/betweenNumberSpacer";
 import limitedText from "../../utils/limitedText";
 import InStock from "./inStock";
+import StarRating from "../ui/starRating/starRating";
+import { IProduct } from "../../models";
 
 interface ProductCardProps {
     categoryName: string;
@@ -19,6 +21,7 @@ interface ProductCardProps {
     votes: number;
     quantity: number;
     handleClick(e: React.MouseEvent<HTMLElement>): void;
+    product: IProduct
 }
 
 const ProductCard = ({
@@ -33,7 +36,8 @@ const ProductCard = ({
     rate,
     votes,
     quantity,
-    handleClick
+    handleClick,
+    product
 }: ProductCardProps) => {
     const productUrl =
         "/my-shop/categories/" +
@@ -62,14 +66,9 @@ const ProductCard = ({
                         <img src={img} alt={label} />
                     </Link>
                     <div className="productCard__contentColumn">
-                        <div className="productCard__ratingBlock">
-                            <span className="productCard__rating">
-                                Рейтинг: {rate}{" "}
-                            </span>
-                            <span className="productCard__votes">
-                                ({betweenNumberSpacer(votes)})
-                            </span>
-                        </div>
+                        <StarRating
+                            product={product}
+                        />
                         <div className="productCard__label">
                             <Link to={productUrl}>
                                 {limitedText(label, 65)}
@@ -118,14 +117,9 @@ const ProductCard = ({
                         <img src={img} alt={label} />
                     </Link>
                     <div className="productCard__contentColumn">
-                        <div className="productCard__ratingBlock">
-                            <span className="productCard__rating">
-                                Рейтинг: {rate}{" "}
-                            </span>
-                            <span className="productCard__votes">
-                                ({betweenNumberSpacer(votes)})
-                            </span>
-                        </div>
+                        <StarRating
+                            product={product}
+                        />
                         <div className="productCard__label">
                             <Link to={productUrl}>
                                 {limitedText(label, 45)}

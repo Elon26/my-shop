@@ -303,6 +303,7 @@ const SubCategoryPage = ({ subCategoryName }: SubCategoryPageProps) => {
                                             votes={product.votes}
                                             quantity={product.quantity}
                                             handleClick={addToCart}
+                                            product={product}
                                         />
                                     ))}
                                 </div>
