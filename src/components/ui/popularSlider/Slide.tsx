@@ -8,6 +8,7 @@ import betweenNumberSpacer from "../../../utils/betweenNumberSpacer";
 import { getDataFromLocalStorage, updateCartInLocalStorage } from "../../../services/localStorageService";
 import { useAppDispatch } from "../../../hooks/reduxHook";
 import { setCart } from "../../../store/cart";
+import { toast } from "react-toastify";
 
 interface SlideProps {
     product: IProduct;
@@ -36,6 +37,7 @@ const Slide = ({ product }: SlideProps) => {
         updateCartInLocalStorage("diplomUserCart", data);
         setIsInCart(true);
         dispatch(setCart(data));
+        toast.success("Товар добавлен в корзину");
     }
 
     const history = useHistory();
