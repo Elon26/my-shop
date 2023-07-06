@@ -14,18 +14,20 @@ import paginate from "../../../utils/paginate";
 import InputFilterField from "../../common/form/inputFilterField";
 import { useHistory } from "react-router-dom";
 import Popup from "../../common/popup";
-import { useAppSelector } from "../../../hooks/reduxHook";
+import { useAppDispatch, useAppSelector } from "../../../hooks/reduxHook";
 import {
     getSubCategoriesLoadingStatus,
     getSubCategory
 } from "../../../store/subCategories";
 import { getProducts } from "../../../store/products";
+import { setCart } from "../../../store/cart";
 
 interface SubCategoryPageProps {
     subCategoryName: string;
 }
 
 const SubCategoryPage = ({ subCategoryName }: SubCategoryPageProps) => {
+    const dispatch = useAppDispatch();
     const subCategory = useAppSelector(getSubCategory(subCategoryName));
     const isLoading = useAppSelector(getSubCategoriesLoadingStatus());
     const products = useAppSelector(getProducts(subCategoryName));
@@ -194,6 +196,7 @@ const SubCategoryPage = ({ subCategoryName }: SubCategoryPageProps) => {
                     }
                 };
                 updateCartInLocalStorage("diplomUserCart", data);
+                dispatch(setCart(data));
             }
             setAddToCartId(productId);
             setIsPopupOpen(true);

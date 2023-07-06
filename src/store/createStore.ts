@@ -3,12 +3,14 @@ import categoriesReducer from "./categories";
 import productsReducer from "./products";
 import subCategoriesReducer from "./subCategories";
 import usersReducer from "./users";
+import cartReducer from "./cart";
 
 const rootReduser = combineReducers({
     categories: categoriesReducer,
     subCategories: subCategoriesReducer,
     products: productsReducer,
-    users: usersReducer
+    users: usersReducer,
+    cart: cartReducer
 });
 
 const store = configureStore({

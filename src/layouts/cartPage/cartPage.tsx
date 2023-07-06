@@ -19,12 +19,14 @@ import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import axios from "axios";
 import Loader from "../../components/ui/loader";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import PopularSlider from "../../components/ui/popularSlider/PopularSlider";
+import { clearCart, removeCartItem, setCart } from "../../store/cart";
 
 const CartPage = () => {
     const dispatch = useAppDispatch();
+
     const userCart = getCartFromLocalStorage("diplomUserCart");
     const userCartArray = Object.keys(userCart);
+
     const products =
         getProductsById && useAppSelector(getProductsById(userCartArray));
     const [isLoading, setIsLoading] = useState(false);
@@ -66,6 +68,7 @@ const CartPage = () => {
                     }
                 };
                 updateCartInLocalStorage("diplomUserCart", data);
+                dispatch(setCart(data));
             }
         }
     };
@@ -95,6 +98,7 @@ const CartPage = () => {
                     }
                 };
                 updateCartInLocalStorage("diplomUserCart", data);
+                dispatch(setCart(data));
             }
         } else {
             toast.error("Выбрано минимальное количество товара");
@@ -129,6 +133,7 @@ const CartPage = () => {
                 }
             };
             updateCartInLocalStorage("diplomUserCart", data);
+            dispatch(setCart(data));
         }
     };
 
@@ -139,6 +144,7 @@ const CartPage = () => {
             (product) => product._id !== id
         );
         setProductsInCart(newState);
+        dispatch(removeCartItem(id));
     };
 
     const sumPrice = productsInCart?.reduce((acc, product) => {
@@ -158,6 +164,7 @@ const CartPage = () => {
         setIsLoading(true);
         await updateDatabase(userCart);
         clearCartFromLocalStorage("diplomUserCart");
+        dispatch(clearCart());
         setIsLoading(false);
         history.push("/my-shop/");
     };

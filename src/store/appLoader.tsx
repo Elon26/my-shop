@@ -6,6 +6,7 @@ import { loadCategoriesList } from "./categories";
 import { loadProductsList } from "./products";
 import { loadSubCategoriesList } from "./subCategories";
 import { loadUsersList } from "./users";
+import { loadCart } from "./cart";
 
 const AppLoader = ({ children }: HOCProps) => {
     const dispatch = useAppDispatch();
@@ -18,7 +19,8 @@ const AppLoader = ({ children }: HOCProps) => {
                 dispatch(loadCategoriesList()),
                 dispatch(loadSubCategoriesList()),
                 dispatch(loadProductsList()),
-                dispatch(loadUsersList())
+                dispatch(loadUsersList()),
+                dispatch(loadCart())
             ]);
             setIsLoading(false);
         };

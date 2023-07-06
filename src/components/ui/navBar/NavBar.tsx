@@ -18,6 +18,7 @@ import {
     BsFillPersonCheckFill
 } from "react-icons/bs";
 import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
+import { getCart } from "../../../store/cart";
 
 const NavBar = () => {
     const history = useHistory();
@@ -26,6 +27,8 @@ const NavBar = () => {
     const currentUser = useAppSelector(getCurrentUser());
     const isLoggedIn = useAppSelector(getIsLoggedIn());
     const { windowWidth } = useWindowDimensions();
+    const cart = useAppSelector(getCart());
+    const [currentQuantity, setCurrentQuantity] = useState(0);
 
     const handleLogout = () => {
         dispatch(logout());
@@ -40,6 +43,14 @@ const NavBar = () => {
             setIsDropdownOpen(false);
         }
     }, [currentUserAreaIsInFocus]);
+
+    useEffect(() => {
+        const newQuantity = cart ? Object.values(cart).reduce((acc, item) => {
+            return acc + item.quantityToBuy;
+        }, 0) : 0;
+
+        setCurrentQuantity(newQuantity);
+    }, [cart]);
 
     return (
         <header>
@@ -74,6 +85,9 @@ const NavBar = () => {
                             <div className="topNavBar__menuObjectText">
                                 Корзина
                             </div>
+                            {currentQuantity > 0 && <div className="topNavBar__cartQuantity">
+                                {currentQuantity}
+                            </div>}
                         </Link>
                         {(!isLoggedIn || (isLoggedIn && !currentUser)) && (
                             <Link

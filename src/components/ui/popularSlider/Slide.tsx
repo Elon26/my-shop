@@ -6,6 +6,8 @@ import { IProduct } from "../../../models";
 import { Link, useHistory } from "react-router-dom";
 import betweenNumberSpacer from "../../../utils/betweenNumberSpacer";
 import { getDataFromLocalStorage, updateCartInLocalStorage } from "../../../services/localStorageService";
+import { useAppDispatch } from "../../../hooks/reduxHook";
+import { setCart } from "../../../store/cart";
 
 interface SlideProps {
     product: IProduct;
@@ -22,6 +24,7 @@ const Slide = ({ product }: SlideProps) => {
         "/";
     const userCart = getDataFromLocalStorage("diplomUserCart") || "";
     const [isInCart, setIsInCart] = useState(userCart.includes(product._id));
+    const dispatch = useAppDispatch();
 
     function handleClick() {
         const data = {
@@ -32,6 +35,7 @@ const Slide = ({ product }: SlideProps) => {
         };
         updateCartInLocalStorage("diplomUserCart", data);
         setIsInCart(true);
+        dispatch(setCart(data));
     }
 
     const history = useHistory();

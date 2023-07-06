@@ -10,14 +10,16 @@ import {
     updateCartInLocalStorage
 } from "../../../services/localStorageService";
 import { getProduct, getProductsLoadingStatus } from "../../../store/products";
-import { useAppSelector } from "../../../hooks/reduxHook";
+import { useAppDispatch, useAppSelector } from "../../../hooks/reduxHook";
 import StarRating from "../../ui/starRating/starRating";
+import { setCart } from "../../../store/cart";
 
 interface ProductPageProps {
     productName: string;
 }
 
 const ProductPage = ({ productName }: ProductPageProps) => {
+    const dispatch = useAppDispatch();
     const [isImgPopupOpen, setIsImgPopupOpen] = useState(false);
     const [isTextPopupOpen, setIsTextPopupOpen] = useState(false);
 
@@ -48,6 +50,7 @@ const ProductPage = ({ productName }: ProductPageProps) => {
             };
             updateCartInLocalStorage("diplomUserCart", data);
             setIsTextPopupOpen(true);
+            dispatch(setCart(data));
         }
     };
 
