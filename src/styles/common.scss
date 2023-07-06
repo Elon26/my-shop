@@ -99,6 +99,7 @@ $md3: 479.98px;
 .popup {
     &__body {
         position: fixed;
+        z-index: 3;
         top: 0;
         left: 0;
         min-width: 100%;

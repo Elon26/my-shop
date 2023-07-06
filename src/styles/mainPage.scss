@@ -4,6 +4,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 40px 0;
+
+    @media (max-width: $md1) {
+        margin: 20px 0;
+    }
+
+    @media (max-width: $md2) {
+        margin: 0;
+    }
 }
 
 .category {

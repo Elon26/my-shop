@@ -39,7 +39,7 @@ const StarRating = ({ product }: StarRatingProps) => {
             votes: updatedVotes
         };
 
-        toast.info("Ваш голос принят");
+        toast.success("Ваша оценка зарегистрирована");
         dispatch(setProduct(data));
         await axios.patch("products/" + product._id + ".json", data);
         localStorage.setItem(`rate-of-${product._id}`, rate.toString());

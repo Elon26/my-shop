@@ -236,7 +236,6 @@ const CartPage = () => {
                 handleClose={() => setIsPopupOpen(false)}
                 handleFinishTheDeal={wrapAsyncFunction(handleFinishTheDeal)}
             />
-            <PopularSlider />
         </div>
     );
 };
