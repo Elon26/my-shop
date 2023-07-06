@@ -145,6 +145,7 @@ const CartPage = () => {
         );
         setProductsInCart(newState);
         dispatch(removeCartItem(id));
+        toast.success("Товар успешно удалён");
     };
 
     const sumPrice = productsInCart?.reduce((acc, product) => {
