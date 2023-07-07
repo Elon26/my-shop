@@ -192,7 +192,7 @@ export const singIn =
     };
 
 export const singUp =
-    ({ email, password, name }: IStringObject) =>
+    ({ email, password, name, phone }: IStringObject) =>
         async (dispatch: AppDispatch) => {
             dispatch(authRequested());
             const url =
@@ -210,7 +210,8 @@ export const singUp =
                 data && dispatch(authRequestSuccessed({ userId: data.localId }));
                 const user = data && {
                     id: data.localId,
-                    name
+                    name,
+                    phone
                 };
                 user && dispatch(createUser(user));
             } catch (e) {

@@ -21,6 +21,9 @@ const validator = (dataEx: IStringObject, config: IValidateSettings) => {
             const emailRegExp = /[-.\w]+@([\w-]+\.)+[\w-]+/g;
             statusValidate = !emailRegExp.test(data);
         }
+        if (validateMethod === "isPhone") {
+            statusValidate = data.length !== 18;
+        }
         if (validateMethod === "isValidPassword") {
             const passwordRegExp =
                 /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[а-яa-z])(?=.*[А-ЯA-Z])[0-9а-яa-zА-ЯA-Z!@#$%^&*]{8,}/g;

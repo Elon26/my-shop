@@ -7,11 +7,13 @@ import { singUp } from "../../store/users";
 import "../../styles/loginRegisterPage.scss";
 import validator from "../../utils/validator";
 import { wrapAsyncFunction } from "../../utils/wrapAsyncFunction";
+import PhoneField from "../../components/common/form/phoneField";
 
 const defaultData = {
     email: "",
     password: "",
-    name: ""
+    name: "",
+    phone: ""
 };
 
 const RegisterPage = () => {
@@ -25,6 +27,14 @@ const RegisterPage = () => {
         name: {
             isRequired: {
                 message: "Необходимо ввести имя."
+            }
+        },
+        phone: {
+            isRequired: {
+                message: "Необходимо ввести номер телефона."
+            },
+            isPhone: {
+                message: "Введите номер телефона полностью."
             }
         },
         email: {
@@ -56,6 +66,13 @@ const RegisterPage = () => {
         setData((prevState) => ({
             ...prevState,
             [e.target.name]: e.target.value
+        }));
+    };
+
+    const handleChangePhone = (value: string) => {
+        setData((prevState) => ({
+            ...prevState,
+            phone: value
         }));
     };
 
@@ -97,6 +114,15 @@ const RegisterPage = () => {
                         value={data.name}
                         handleChange={handleChange}
                         error={errors.name}
+                    />
+                </div>
+                <div className="login__input-item">
+                    <PhoneField
+                        label="Телефон"
+                        name="phone"
+                        value={data.phone}
+                        handleChangePhone={handleChangePhone}
+                        error={errors.phone}
                     />
                 </div>
                 <div className="login__input-item">
