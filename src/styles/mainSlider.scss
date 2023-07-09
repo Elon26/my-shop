@@ -5,8 +5,15 @@
     position: relative;
 
     &__slide {
+        background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+        margin-bottom: -4px;
         img {
-            max-height: 400px;
+            height: 300px;
+
+            @media (max-width: $md1) {
+                height: auto;
+                max-height: 300px;
+            }
             width: 100%;
             object-fit: cover;
         }
