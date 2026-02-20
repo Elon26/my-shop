@@ -72,4 +72,3 @@ Demo admin credentials:
 2. Install dependencies  
 3. Configure Firebase credentials  
 4. Start the development server  
-
